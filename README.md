@@ -44,7 +44,8 @@ const instance = axios.create({
   baseURL: 'https://fakestoreapi.com',
 });
 
-export default instance; ```
+export default instance;
+```
 ---
 
 ## Routing & Layout (App.jsx)  
