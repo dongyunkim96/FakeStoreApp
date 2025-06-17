@@ -34,10 +34,6 @@ src/
 ├── App.jsx
 └── App.css
 
-yaml
-Copy
-Edit
-
 ---
 
 ## API Setup (src/services/api.js)  
@@ -49,60 +45,40 @@ const instance = axios.create({
 });
 
 export default instance;
-Routing & Layout (App.jsx)
-Uses React Router Routes and Route to define paths:
 
-/ → HomePage
+---
 
-/products → ProductList
+## Routing & Layout (App.jsx)  
+- Uses React Router’s `Routes` and `Route` to define navigation paths:  
+  - `/` → HomePage  
+  - `/products` → ProductList  
+  - `/products/:id` → ProductDetails  
+  - `/add-product` → AddProduct  
+  - `/edit-product/:id` → EditProduct  
+- The app wraps all pages with a consistent layout:  
+  - `Header` component at the top (navigation bar)  
+  - Main content area rendered inside `<div className='main-cotent'>`  
+  - `Footer` component at the bottom
 
-/products/:id → ProductDetails
+---
 
-/add-product → AddProduct
+## Product Forms (AddProduct.jsx, EditProduct.jsx)  
+- Both components use controlled form inputs linked to React state (`useState`).  
+- `AddProduct` submits a POST request to add a new product; resets form and navigates to product list on success.  
+- `EditProduct` fetches product data by ID on mount (`useEffect`), pre-fills the form, and submits a PUT request to update the product.  
+- Both handle loading states and provide user feedback via alerts.
 
-/edit-product/:id → EditProduct
+---
 
-Header and Footer are displayed on all pages.
+## Product Details & Deletion (ProductDetails.jsx)  
+- Fetches a product by ID from the API when the component loads (`useEffect`).  
+- Displays product image, title, category, description, and price.  
+- Includes a "Delete Product" button that triggers a confirmation modal.  
+- Upon confirmation, deletes the product via API and redirects to the products list.
 
-Product Forms (AddProduct.jsx, EditProduct.jsx)
-Controlled inputs using React state (useState).
+---
 
-Submits POST or PUT requests to add or update products.
-
-Alerts user on success or failure and navigates accordingly.
-
-Product Details & Deletion (ProductDetails.jsx)
-Fetches product by ID on mount (useEffect).
-
-Shows product info with image, title, category, description, price.
-
-Provides deletion with a confirmation modal to avoid accidental deletes.
-
-Running the App
-Clone repo:
-
-bash
-Copy
-Edit
-git clone https://github.com/dongyunkim96/FakeStoreApp.git
-Install dependencies:
-
-bash
-Copy
-Edit
-npm install
-Start app:
-
-bash
-Copy
-Edit
-npm start
-Open in browser at http://localhost:3000
-
-References
-Fake Store API Documentation
-
-React Router
-
-React Bootstrap
-
+## Running the App  
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/dongyunkim96/FakeStoreApp.git
