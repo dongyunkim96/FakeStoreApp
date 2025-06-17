@@ -20,19 +20,19 @@ React, React Router DOM (v6), Axios, Bootstrap & React-Bootstrap, Fake Store API
 ---
 
 ## Project Structure  
-src/
-├── components/
-│ ├── AddProduct.jsx
-│ ├── EditProduct.jsx
-│ ├── Footer.jsx
-│ ├── Header.jsx
-│ ├── HomePage.jsx
-│ ├── ProductDetails.jsx
-│ ├── ProductList.jsx
-├── services/
-│ └── api.js
-├── App.jsx
-└── App.css
+src/<br/>
+├── components/<br/>
+│ ├── AddProduct.jsx<br/>
+│ ├── EditProduct.jsx<br/>
+│ ├── Footer.jsx<br/>
+│ ├── Header.jsx<br/>
+│ ├── HomePage.jsx<br/>
+│ ├── ProductDetails.jsx<br/>
+│ ├── ProductList.jsx<br/>
+├── services/<br/>
+│ └── api.js<br/>
+├── App.jsx<br/>
+└── App.css<br/>
 
 ---
 
